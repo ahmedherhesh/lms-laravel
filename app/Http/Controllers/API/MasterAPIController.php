@@ -13,10 +13,10 @@ class MasterAPIController extends Controller
         $this->user = auth('api')->user();
     }
 
-    public function response($condition = null, $data = null, $error = 'Failed Request')
+    public function response($condition = null, $data = null, $error = 'Failed Request',$status = 200)
     {
         if ($condition)
-            return response()->json(['status' => 200, 'data'  => $data], 200);
+            return response()->json(['status' => $status, 'data'  => $data], $status);
         return response()->json(['status' => 403, 'data'  => $error], 403);
     }
 }
