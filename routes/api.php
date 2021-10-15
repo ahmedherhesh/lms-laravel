@@ -3,18 +3,16 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\Auth\LoginController;
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+
 
 Route::middleware('auth:passport')->get('/user', function (Request $request) {
-    return auth()->user();
+    return $request->user();
 });
+
 Route::post('/login',[LoginController::class,'login']);
+Route::namespace('App\Http\Controllers\API\Teacher')->group(function(){
+    Route::get('years','YearsController@index');
+    Route::get('groups','GroupsController@index');
+    Route::get('days','DaysController@index');
+    Route::resource('time-tables','TimeTablesController');
+});
