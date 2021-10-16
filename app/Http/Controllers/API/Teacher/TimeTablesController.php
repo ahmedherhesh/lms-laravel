@@ -3,38 +3,37 @@
 namespace App\Http\Controllers\API\Teacher;
 
 use App\Http\Controllers\API\MasterAPIController;
-use App\Http\Controllers\Controller;
-use App\Http\Resources\API\TimeTableResource;
-use App\Models\TimeTable;
+use App\Http\Resources\API\TimetableResource;
+use App\Models\Timetable;
 use Illuminate\Http\Request;
 
-class TimeTablesController extends MasterAPIController
+class TimetablesController extends MasterAPIController
 {
     public function index()
     {
-        $time_table = TimeTable::whereTeacher_id($this->user->id)->get();
-        return $this->response($time_table, TimeTableResource::collection($time_table));
+        $timetable = Timetable::whereTeacher_id($this->user->id)->get();
+        return $this->response($timetable, TimetableResource::collection($timetable));
     }
 
     public function store(Request $request)
     {
         $data = $request->all();
         $data['teacher_id'] = $this->user->id;
-        $time_table = TimeTable::create($data);
-        return $this->response($time_table, new TimeTableResource($time_table));
+        $timetable = Timetable::create($data);
+        return $this->response($timetable, new TimetableResource($timetable));
     }
 
     public function update($id, Request $request)
     {
-        $time_table = TimeTable::whereId($id)->whereTeacher_id($this->user->id)->first();
-        if ($time_table) $time_table->update($request->all());
-        return $this->response($time_table, 'تم تحديث الجدول');
+        $timetable = Timetable::whereId($id)->whereTeacher_id($this->user->id)->first();
+        if ($timetable) $timetable->update($request->all());
+        return $this->response($timetable, 'تم تحديث الجدول');
     }
     
     public function destroy($id)
     {
-        $time_table = TimeTable::whereId($id)->whereTeacher_id($this->user->id)->first();
-        if ($time_table) $time_table->delete();
-        return $this->response($time_table, 'تم حذف الجدول');
+        $timetable = Timetable::whereId($id)->whereTeacher_id($this->user->id)->first();
+        if ($timetable) $timetable->delete();
+        return $this->response($timetable, 'تم حذف الجدول');
     }
 }

@@ -14,5 +14,5 @@ Route::namespace('App\Http\Controllers\API\Teacher')->group(function(){
     Route::get('years','YearsController@index');
     Route::get('groups','GroupsController@index');
     Route::get('days','DaysController@index');
-    Route::resource('time-tables','TimeTablesController');
+    Route::resource('timetables','TimetablesController');
 });

@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             YearSeeder::class,
             GroupSeeder::class,
-            DaysSeeder::class,
+            DaySeeder::class,
         ]);
     }
 }

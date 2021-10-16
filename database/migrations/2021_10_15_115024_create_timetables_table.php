@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTimeTablesTable extends Migration
+class CreateTimetablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateTimeTablesTable extends Migration
      */
     public function up()
     {
-        Schema::create('time_tables', function (Blueprint $table) {
+        Schema::create('timetables', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('teacher_id');
+            $table->unsignedBigInteger('year_id');
             $table->unsignedBigInteger('group_id');
+            $table->unsignedBigInteger('day_id');
             $table->time('time');
-            $table->string('day_name');
             $table->timestamps();
         });
     }

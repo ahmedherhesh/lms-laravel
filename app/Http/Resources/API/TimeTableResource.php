@@ -4,7 +4,7 @@ namespace App\Http\Resources\API;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class TimeTableResource extends JsonResource
+class TimetableResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
