@@ -10,6 +10,10 @@ class Exam extends Model
     use HasFactory;
     protected $fillable = [
         'teacher_id',
-        'name'
+        'year_id',
+        'group_id',
+        'examination_date',
+        'time_start',
+        'time_end'
     ];
 }
