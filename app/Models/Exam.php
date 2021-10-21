@@ -16,4 +16,13 @@ class Exam extends Model
         'time_start',
         'time_end'
     ];
+    public function group(){
+        return $this->belongsTo(Group::class);
+    }
+    public function year(){
+        return $this->belongsTo(Year::class);
+    }
+    public function day(){
+        return $this->belongsTo(Day::class);
+    }
 }
