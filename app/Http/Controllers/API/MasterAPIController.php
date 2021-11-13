@@ -15,7 +15,7 @@ class MasterAPIController extends Controller
 
     public function response($condition = null, $data = null, $error_message = 'Failed Request',$failed_status = 403)
     {
-        if ($condition)
+        if (isset($condition))
             return response()->json($data, 200);
         return response()->json($error_message, $failed_status);
     }

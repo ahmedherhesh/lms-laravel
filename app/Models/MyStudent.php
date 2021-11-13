@@ -10,6 +10,9 @@ class MyStudent extends Model
     use HasFactory;
     protected $fillable = [
         'teacher_id',
-        'name'
+        'student_id',
+        'year_id',
+        'group_id',
+        'parent_mobile',
     ];
 }

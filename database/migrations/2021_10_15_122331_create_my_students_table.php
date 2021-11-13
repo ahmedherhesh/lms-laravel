@@ -17,6 +17,9 @@ class CreateMyStudentsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('teacher_id');
             $table->unsignedBigInteger('student_id');
+            $table->unsignedBigInteger('year_id')->nullable();
+            $table->unsignedBigInteger('group_id')->nullable();
+            $table->string('parent_mobile')->nullable();
             $table->timestamps();
         });
     }

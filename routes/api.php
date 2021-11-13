@@ -4,7 +4,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\Auth\LoginController;
 
-
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -20,6 +19,7 @@ Route::namespace('App\Http\Controllers\API\Teacher')->group(function () {
         Route::post('question-store', 'QuestionsController@store');
         Route::post('question-update', 'QuestionsController@update');
         Route::post('question-delete', 'QuestionsController@destroy');
-
+        Route::resource('students','StudentsController');
+        Route::post('student-update/{id}','StudentsController@update');
     });
 });
