@@ -51,6 +51,9 @@ class User extends Authenticatable
         $this->attributes['image'] = time() .'_'. rand(1,1000) .'.'. $image->extension();
         $image->move(public_path('uploads/users/images'),$this->attributes['image']);
     }
+    public function getImageAttribute($image){
+        return $image ? asset("uploads/users/images/$image") : null;
+    }
 
     public function setPasswordAttribute($password)
     {

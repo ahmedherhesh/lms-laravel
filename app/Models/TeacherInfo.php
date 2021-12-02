@@ -10,6 +10,11 @@ class TeacherInfo extends Model
     use HasFactory;
     protected $fillable = [
         'teacher_id',
-        'name'
+        'address',
+        'social_media',
+        'subscribe_type'
     ];
+    public function teacher(){
+        return $this->belongsTo(User::class);
+    }
 }

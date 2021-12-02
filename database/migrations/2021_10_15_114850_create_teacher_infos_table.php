@@ -16,8 +16,11 @@ class CreateTeacherInfosTable extends Migration
         Schema::create('teacher_infos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('teacher_id');
+            $table->string('address');
+            $table->string('social_media');
             $table->unsignedBigInteger('subscribe_type')->nullable();
             $table->date('next_payment_time')->nullable();
+            $table->timestamps();
         });
     }
 
