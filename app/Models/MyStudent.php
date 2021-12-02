@@ -15,4 +15,14 @@ class MyStudent extends Model
         'group_id',
         'parent_mobile',
     ];
+
+    public function student(){
+        return $this->belongsTo(User::class);
+    }
+    public function year(){
+        return $this->belongsTo(Year::class);
+    }
+    public function group(){
+        return $this->belongsTo(Group::class);
+    }
 }
