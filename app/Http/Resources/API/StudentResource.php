@@ -21,8 +21,8 @@ class StudentResource extends JsonResource
             'mobile'        => $this->student->mobile,
             'role'          => $this->student->role,
             'status'        => $this->student->status,
-            'year_id'       => $this->year->name,
-            'group_id'      => $this->group->name,
+            'year_name'       => $this->year->name,
+            'group_name'      => $this->group->name,
             'parent_mobile' => $this->parent_mobile,
         ];
     }
