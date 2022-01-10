@@ -20,6 +20,7 @@ class TimetableResource extends JsonResource
             'year_name' =>  $this->year->name,
             'day_name' =>  $this->day->name,
             'time' => $this->time,
+            'date' => $this->date,
         ];
     }
 }

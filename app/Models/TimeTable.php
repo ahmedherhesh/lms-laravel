@@ -13,15 +13,16 @@ class Timetable extends Model
         'group_id',
         'year_id',
         'day_id',
-        'time'
+        'time',
+        'date'
     ];
     public function group(){
-        return $this->belongsTo(Group::class);
+        return $this->hasOne(Group::class);
     }
     public function year(){
-        return $this->belongsTo(Year::class);
+        return $this->hasOne(Year::class);
     }
     public function day(){
-        return $this->belongsTo(Day::class);
+        return $this->hasOne(Day::class);
     }
 }

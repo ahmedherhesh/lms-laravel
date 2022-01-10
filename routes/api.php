@@ -23,5 +23,7 @@ Route::namespace('App\Http\Controllers\API\Teacher')->group(function () {
         Route::post('question-delete', 'QuestionsController@destroy');
         Route::resource('students', 'StudentsController');
         Route::post('student-update/{id}', 'StudentsController@update');
+        Route::get('present-students','PresenceController@presentStudents');
+        Route::get('absent-students','PresenceController@absentStudents');
     });
 });

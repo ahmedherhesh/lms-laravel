@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreatePresenceTable extends Migration
@@ -17,9 +18,11 @@ class CreatePresenceTable extends Migration
             $table->id();
             $table->unsignedBigInteger('teacher_id');
             $table->unsignedBigInteger('student_id');
+            $table->unsignedBigInteger('timetable_id');
+            $table->unsignedBigInteger('year_id');
             $table->unsignedBigInteger('group_id');
-            $table->unsignedBigInteger('time_id');
-            $table->date('date')->default(date('Y-m-d'));
+            $table->date('timetable_date');
+            $table->timestamps();
         });
     }
 
